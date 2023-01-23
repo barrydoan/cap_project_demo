@@ -1,0 +1,6 @@
+# Init the project
+cds init cap_project_demo
+# Start the application 
+cds watch
+# add mta file to the project
+cds add mta
