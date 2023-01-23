@@ -1,0 +1,95 @@
+<mvc:View controllerName="orderportal.controller.ProductList"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:tnt="sap.tnt" 
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table noDataText="No data" id="table" 
+                items="{      
+                    path: '/Products',     
+                    sorter: {       
+                        path: 'name'      
+                    }
+                    }"
+                growing="true"
+                growingScrollToLoad="true">
+                <headerToolbar>
+                    <Toolbar>
+                        <Title id="tableHeader"
+                            text="Products" />
+                        <ToolbarSpacer />
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ColumnListItem type="Active" id="item0">
+                        <cells>  
+                            <HBox alignItems="Center" justifyContent="SpaceBetween">
+                                <Image src="img/{imageUrl}" width="100px" height="100px"  class="sapUiSmallMargin"/>
+                                <VBox width="100%" height="100px" direction="Column" alignItems="Stretch">
+                                    <Text class="product-name" text="{name}" />
+                                    <Text text="{NDC} | {shortId}" />
+                                    <tnt:InfoLabel id="il3" text="{stock}" renderMode="Narrow" colorScheme="7"/>
+                                    <Text text="{supplierName}"/>
+                                </VBox>
+                            </HBox>
+                            <VBox height="100px">
+                                <Text text="{form}"/>
+                            </VBox>
+                            <VBox height="100px">
+                                <Text text="{unitSize}"/>
+                            </VBox>
+                            <Text width="8em" text="${perDose}"/>
+                            <Text width="8em" text="${rebate}"/>
+                            <Text width="8em" text="${awp}"/>
+                            <Text width="8em" text="${retailPrice}"/>
+                            <Text width="8em" text="${acqCost}"/>
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                <columns>
+                    <Column width="26em">
+                        <header>
+                            <Label text="Description"/>
+                        </header>
+                    </Column>
+                    <Column width="8em">
+                        <header>
+                            <Label text="Form"/>
+                        </header>
+                    </Column>
+                    <Column  width="8em">
+                        <header>
+                            <Label text="UnitSize"/>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label width="8em" text="Per Dose"/> 
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label width="8em" text="Rebate"/>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>    
+                            <Label width="8em" text="AWP"/>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>    
+                            <Label width="8em" text="Retail Price"/>
+                        </header>
+                    </Column>
+                    <Column>
+                        <header>
+                            <Label width="8em" text="Acq. Cost"/>
+                        </header>
+                    </Column >
+                </columns>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
