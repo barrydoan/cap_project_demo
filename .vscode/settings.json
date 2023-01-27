@@ -1,1 +1,10 @@
-{}
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "database",
+            "database": "db.sqlite"
+        }
+    ]
+}

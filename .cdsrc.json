@@ -1,1 +1,25 @@
-{}
+{
+    "auth": {
+        "passport": {
+            "strategy": "mock",
+            "user": {
+                "alice": {
+                    "passport": "123",
+                    "ID": "alice",
+                    "roles": [
+                        "admin",
+                        "authenicated-user"
+                    ]
+                },
+                "bob": {
+                    "passport": "123",
+                    "ID": "bob",
+                    "roles": [
+                        "admin",
+                        "authenicated-user"
+                    ]
+                }
+            }
+        }
+    }
+}
