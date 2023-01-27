@@ -6,7 +6,3 @@ service AdminService  {
   entity Categories as select from my.Categories;
   entity Orders as select from my.Orders;
 }
-
-annotate AdminService.Orders with @(restrict: [
-  {grant: 'READ', to: 'admin'}
-]);
