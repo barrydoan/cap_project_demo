@@ -9,6 +9,10 @@ describe('OData protocol level test', () => {
         .from(__dirname+'/../srv/order-service').in(app)
     })
 
+    /**
+     * List the product from order service
+     * 
+     */
     test('GET with $select', async () => {
         const response = await request
         .get('/order/Products?$select=ID,name,stock&$top=5')
@@ -53,7 +57,10 @@ describe('CDS service-level', () => {
         expect(Products).toBeDefined()
     })
     
-    test('GET all books', async () => {
+    /**
+     * Get the first five product from cds level
+     */
+    test('GET the first five products', async () => {
         const product = await srv.read (
         Products, p=>{ p.ID, p.name }
     ).where('ID in (1, 2, 3, 4, 5)')
